@@ -1,0 +1,204 @@
+{
+  "info": {
+    "_postman_id": "c1a2b3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "Blog REST API - Week 06 Minor Project",
+    "description": "Collection for testing all CRUD endpoints of the Blog REST API built with Node.js and Express.js",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check & Welcome",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/",
+          "host": ["{{baseUrl}}"],
+          "path": [""]
+        },
+        "description": "API status, version, and endpoints overview"
+      },
+      "response": []
+    },
+    {
+      "name": "1. Create Blog Post (POST)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Understanding Node.js Event Loop\",\n  \"content\": \"The event loop allows Node.js to perform non-blocking I/O operations by offloading tasks to the system kernel.\",\n  \"author\": \"David Miller\",\n  \"category\": \"Backend Development\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/posts",
+          "host": ["{{baseUrl}}"],
+          "path": ["posts"]
+        },
+        "description": "Create a new blog post"
+      },
+      "response": []
+    },
+    {
+      "name": "2. Get All Blog Posts (GET)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/posts",
+          "host": ["{{baseUrl}}"],
+          "path": ["posts"]
+        },
+        "description": "Retrieve all blog posts"
+      },
+      "response": []
+    },
+    {
+      "name": "3. Search and Filter Blog Posts (GET)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/posts?category=Technology&search=Node",
+          "host": ["{{baseUrl}}"],
+          "path": ["posts"],
+          "query": [
+            {
+              "key": "category",
+              "value": "Technology"
+            },
+            {
+              "key": "search",
+              "value": "Node"
+            }
+          ]
+        },
+        "description": "Filter by category and search keyword"
+      },
+      "response": []
+    },
+    {
+      "name": "4. Paginated Blog Posts (GET)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/posts?page=1&limit=2",
+          "host": ["{{baseUrl}}"],
+          "path": ["posts"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "2"
+            }
+          ]
+        },
+        "description": "Get paginated blog posts"
+      },
+      "response": []
+    },
+    {
+      "name": "5. Get Single Blog Post by ID (GET)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/posts/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["posts", "1"]
+        },
+        "description": "Retrieve a specific blog post by ID"
+      },
+      "response": []
+    },
+    {
+      "name": "6. Update Blog Post (PUT)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Getting Started with Node.js and Express (Updated)\",\n  \"category\": \"Web & Cloud Development\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/posts/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["posts", "1"]
+        },
+        "description": "Update an existing blog post"
+      },
+      "response": []
+    },
+    {
+      "name": "7. Delete Blog Post (DELETE)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/posts/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["posts", "1"]
+        },
+        "description": "Delete a blog post by ID"
+      },
+      "response": []
+    },
+    {
+      "name": "8. Test Validation Error (POST Invalid)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/posts",
+          "host": ["{{baseUrl}}"],
+          "path": ["posts"]
+        },
+        "description": "Expect 400 Bad Request"
+      },
+      "response": []
+    },
+    {
+      "name": "9. Test Not Found Error (GET Non-existent)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/posts/non-existent-id-999",
+          "host": ["{{baseUrl}}"],
+          "path": ["posts", "non-existent-id-999"]
+        },
+        "description": "Expect 404 Not Found"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000",
+      "type": "string"
+    }
+  ]
+}

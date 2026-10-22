@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "title": "Getting Started with Node.js and Express",
+    "content": "Node.js is an open-source, cross-platform JavaScript runtime environment. When paired with Express.js, it provides a fast and minimalist framework for building scalable RESTful APIs.",
+    "author": "Alice Johnson",
+    "category": "Technology",
+    "createdAt": "2026-03-01T10:00:00.000Z",
+    "updatedAt": "2026-03-01T10:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "title": "Mastering RESTful API Architecture",
+    "content": "A REST API adheres to architectural constraints such as statelessness, uniform interfaces, and standard HTTP methods including GET, POST, PUT, and DELETE.",
+    "author": "Bob Smith",
+    "category": "Web Development",
+    "createdAt": "2026-03-05T14:30:00.000Z",
+    "updatedAt": "2026-03-05T14:30:00.000Z"
+  },
+  {
+    "id": "3",
+    "title": "Best Practices for Backend Error Handling",
+    "content": "Proper error handling and meaningful HTTP status codes improve API developer experience, debugging efficiency, and client application stability.",
+    "author": "Carol White",
+    "category": "Best Practices",
+    "createdAt": "2026-03-10T09:15:00.000Z",
+    "updatedAt": "2026-03-10T09:15:00.000Z"
+  }
+]
