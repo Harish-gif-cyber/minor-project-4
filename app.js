@@ -9,7 +9,7 @@ const { notFoundHandler, errorHandler } = require('./middleware/errorHandler');
 
 const app = express();
 
-// Enable Cross-Origin Resource Sharing
+
 app.use(cors());
 
 // Body Parsers
